@@ -47,13 +47,14 @@ namespace RPGAdv
                     Console.WriteLine($"Welcome {name}! Allow me a moment to set up your profile");
 
                     //Connect to the pause method
-                    Pause();
+                    //Pause();
 
                     Console.WriteLine("Ready! Press enter to begin");
                     Console.ReadLine();
 
                     //Connect to the StartGame Method
-                    StartGame();
+                    //StartGame();
+                    //StartGame();
 
                     Console.ReadKey();
                 }
@@ -64,7 +65,7 @@ namespace RPGAdv
                     Global.name = Console.ReadLine();
 
                     Console.WriteLine("Great! Give me a moment to pull up your profile.");
-                    Pause();
+                    //Pause();
 
 
                     // checking user info form the database.
@@ -79,10 +80,20 @@ namespace RPGAdv
 
                     // checking to make sure the database has info in it.
 
-                    if (user.HasRows)
+                    if (user.HasRows)   
                     {
+                        while (user.Read())
+                        {
+                            Console.WriteLine("Welcome back {0}!", user["name"]);
 
+                        }
                     }
+
+                    //closing database
+                    databaseObject.CloseConnection();
+
+                    //load checkpoint method
+                    //LoadCheckpoint();
                 }
             }
         }

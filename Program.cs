@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rpgADV;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Security.Cryptography.X509Certificates;
@@ -55,9 +56,7 @@ namespace RPGAdv
                     Console.ReadLine();
 
                     //Connect to the StartGame Method
-                    //StartGame();
-                    //StartGame();
-
+                    StartGame();
                     Console.ReadKey();
                 }
 
@@ -97,6 +96,48 @@ namespace RPGAdv
                     //load checkpoint method
                     //LoadCheckpoint();
                 }
+
+
+            }
+
+            //Connecting to the opening class script
+            static void StartGame()
+            {
+                Opening OpeningClass = new Opening();
+
+                OpeningClass.StartGame();
+
+            }
+
+            static void LoadCheckpoint()
+            {
+                //Connecting tot he database class script
+                Database databaseopen = new Database();
+
+                databaseopen.CloseConnection();
+
+                switch (Global.checkpoint)
+                {
+                    case 1:
+                        CheckpointOne();
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    default:
+                        StartGame();
+                        break;
+                }
+            }
+
+            static void CheckpointOne()
+            {
+                CheckpointOne Checkpointhit = new CheckpointOne();
+
+                Checkpointhit.CheckpointOne();
             }
         }
     }

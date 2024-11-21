@@ -12,7 +12,7 @@ namespace RPGAdv
         public SQLiteConnection myConnection;
         public Database()
         {
-            myConnection = new SQLiteConnection("Data source=C:\\Users\\Water\\source\\repos\\rpgADV\\rpgADV\\bin\\Debug\\database.sqlite3");
+            myConnection = new SQLiteConnection("Data Source=C:\\Users\\Water\\source\\repos\\rpgADV\\rpgADV\\bin\\Debug\\database.sqlite3");
 
             if (!File.Exists("./database.sqlite3"))
             {

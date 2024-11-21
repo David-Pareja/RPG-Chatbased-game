@@ -36,9 +36,11 @@ namespace RPGAdv
                     databaseObject.OpenConnection();
 
                     //Insert the data into the database1name);
+                    myCommand.Parameters.AddWithValue("@name", name);
                     myCommand.Parameters.AddWithValue("@checkpoint", 0);
 
                     //Execute the command
+
                     myCommand.ExecuteNonQuery();
 
                     //Close the data

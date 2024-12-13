@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rpgADV
+namespace rpgADV.StoryParts
 {
     internal class CheckpointOne
     {
-        public void CheckpointOne() 
+        public void CheckpointOne()
         {
-            
+
         }
 
         public void CheckpointTwo()
         {
 
         }
-}
+    }

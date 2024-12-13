@@ -1,4 +1,4 @@
-﻿using rpgADV;
+﻿using rpgADV.StoryParts;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -94,7 +94,7 @@ namespace RPGAdv
                     databaseObject.CloseConnection();
 
                     //load checkpoint method
-                    //LoadCheckpoint();
+                    LoadCheckpoint();
                 }
 
 
@@ -104,9 +104,7 @@ namespace RPGAdv
             static void StartGame()
             {
                 Opening OpeningClass = new Opening();
-
                 OpeningClass.StartGame();
-
             }
 
             static void LoadCheckpoint()
@@ -138,6 +136,18 @@ namespace RPGAdv
                 CheckpointOne Checkpointhit = new CheckpointOne();
 
                 Checkpointhit.CheckpointOne();
+            }
+
+            static void Pause()
+            {
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("...");
+
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("...");
+
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("...");
             }
         }
     }

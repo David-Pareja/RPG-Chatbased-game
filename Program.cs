@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 namespace RPGAdv
 {
@@ -11,6 +12,12 @@ namespace RPGAdv
         public static int checkpoint;
         public static bool loadedCheckPoint;
         public static string name;
+        public float health;
+        public float attackbase;
+        public float healthbase;
+        public int level;
+        public int experience;
+
 
         class Program
         {

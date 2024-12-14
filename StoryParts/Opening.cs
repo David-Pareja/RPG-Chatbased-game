@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,12 +52,11 @@ namespace rpgADV.StoryParts
             System.Threading.Thread.Sleep(2500);
             Console.WriteLine("To Castle Stormveil, over on the cliff.");
             System.Threading.Thread.Sleep(2000);
-            Console.WriteLine("The home of the decrepit demigod, Godrick the Grafted.");;
+            Console.WriteLine("The home of the decrepit demigod, Godrick the Grafted."); ;
             Console.WriteLine("It's time you set off, I should think.");
             Console.WriteLine("To Castle Stormveil, on the cliff, where grace would guide you.");
             Console.WriteLine("If you seek the Elden Ring, maidenless as you are.");
-
-
+            
             int[] roll = { 0, 1 };
             Random rawndomNumber = new Random();
             int ranRoll = rawndomNumber.Next(roll.Length);
@@ -69,15 +69,15 @@ namespace rpgADV.StoryParts
                     string choice = Console.ReadLine();
                     choice.ToLower();
 
-                    if (choice == "yes" || choice == "1"|| choice == "one")
+                    if (choice == "yes" || choice == "1" || choice == "one")
                     {
                         Console.WriteLine("You confront the soldier");
                         //FightTreeSen();
                     }
-                    else if (choice == "no" ||  choice == "2" || choice == "second")
+                    else if (choice == "no" || choice == "2" || choice == "second")
                     {
                         Console.WriteLine("Wise choice.");
-                        //Walking();
+                        Walking();
                     }
                     break;
                 case 1:
@@ -100,10 +100,12 @@ namespace rpgADV.StoryParts
                         Grace1();
                     }
                     break;
+
             }
 
+        }
 
-            static void Grace1()
+        static void Grace1()
             {
                 Database databaseObject = new Database();
                 //Update the user info using the database
@@ -117,10 +119,20 @@ namespace rpgADV.StoryParts
 
                 databaseObject.CloseConnection();
 
-                
+                   
+            }
+
+            static void Walking()
+            {
+                Console.WriteLine("You approach a church with a few zombies");
+            }
+
+
+            static void Fight()
+            {
+
             }
 
             
         }
-    }
 }

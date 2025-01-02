@@ -13,6 +13,10 @@ namespace rpgADV.StoryParts
 {
     internal class Opening
     {
+        public void BattleStart()
+        {
+
+        }
         public void StartGame()
         {
             Console.WriteLine("Welcome Tarnished, one of the forsaken who has lost his grace and seeks to reclaim it" +

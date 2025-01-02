@@ -8,7 +8,7 @@ namespace rpgADV.StoryParts
 {
     internal class CheckpointOne
     {
-        public void CheckpointOne()
+        public void CheckPointOne()
         {
 
         }
@@ -18,3 +18,4 @@ namespace rpgADV.StoryParts
 
         }
     }
+}

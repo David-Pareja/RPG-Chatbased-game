@@ -35,7 +35,7 @@ namespace RPGAdv
                     string name = Console.ReadLine();
 
                     //Tell data base what we want it to do
-                    string query = "INSERT INTO login ('name', 'checkpoint') VALUES (@name, @checkpoint)";
+                    string query = "INSERT INTO login ('name', 'checkpoint', 'Health', 'Attackabase', 'HealthBase', level', 'experience') VALUES (@name, @checkpoint, @Health, @Attackbase, @HealthBase, @level, @experience)";
 
                     //Creates a SQLite coomand
                     SQLiteCommand myCommand = new SQLiteCommand(query, databaseObject.myConnection);
@@ -46,6 +46,11 @@ namespace RPGAdv
                     //Insert the data into the database1name);
                     myCommand.Parameters.AddWithValue("@name", name);
                     myCommand.Parameters.AddWithValue("@checkpoint", 0);
+                    myCommand.Parameters.AddWithValue("@Health", 10);
+                    myCommand.Parameters.AddWithValue("@AttackBase", 3);
+                    myCommand.Parameters.AddWithValue("@Healthbase", 10);
+                    myCommand.Parameters.AddWithValue("@level", 1);
+                    myCommand.Parameters.AddWithValue("@experience", 30);
 
                     //Execute the command
 
